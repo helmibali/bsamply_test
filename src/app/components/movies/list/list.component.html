@@ -1,0 +1,52 @@
+<div class="header ml-5 mt-5">
+  <div class="ml-5 search">
+    <input type="text" placeholder="search" [(ngModel)]="term" />
+  </div>
+  <div class="check">
+    <input type="checkbox" (change)="onSelectByCritics($event)" />
+    <label for="vehicle1"> NYT Critic’s Pick </label><br />
+  </div>
+  <div class="dropdown">
+    <div class="text">Results sorted by</div>
+    <select  [(ngModel)]="order">
+      <option value="publication_date"> publication date</option>
+      <option value="opening_date">opennig date</option>
+    </select>
+  </div>
+</div>
+<div class="body">
+    <div class="list-movies">
+        <table class="ml-5">
+            <tr class="mt-5 mb-5" *ngFor="let m of movies | filter : term | sortBy : order">
+              <td>
+                <div class="ml-3 mr-3">{{ m.publication_date }} <br/>
+                    <a href="{{ m.link.url }}" target="_blank">Read Review</a>
+                </div>
+                <br />
+                
+              </td>
+              <td>
+                <div class="ml-5">
+                    <b class="ml-3 mr-3"> {{ m.display_title }} </b> <br />
+                    {{ m.headline }}<br />
+                    <P>         By {{ m.byline }}</P>              
+                </div>
+                
+              </td>
+        
+              <td>
+                <div class="ml-5" *ngIf="m.multimedia === null">
+                  <img src="https://cdn.pixabay.com/photo/2019/04/24/21/55/cinema-4153289_960_720.jpg" width="150" alt="">
+                </div>
+                <div *ngIf="m.multimedia !== null">
+                  <img class="movie_img ml-5" src="{{ m.multimedia.src }}" width="150" />
+                </div>
+              </td>
+            </tr>
+          </table>
+    </div>
+    <div class="img">
+        <img src="https://via.placeholder.com/320x600.png?text=just+an+image" alt="">
+    </div>
+  
+</div>

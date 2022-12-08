@@ -1,0 +1,89 @@
+.header{
+    display: flex;
+    width: 100%;
+
+}
+
+.body{
+    display: flex;
+    width: 90%;  
+}
+
+.list-movies{
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.img{
+    width:20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.search{
+width: 50%;
+}
+
+.search input{
+    width: 90%;
+}
+
+.check{
+    width: 20%;
+
+}
+
+.dropdown{
+    display: flex;
+width: 20%;
+}
+
+.dropdown select{
+    border: none;
+}
+.text{
+    color:gray
+}
+
+@media only screen and (max-width:790px){
+    .header{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+    .search{
+        width: 90%;
+        }
+        .check{
+            width: 40%;
+        
+        }
+        .dropdown{
+            display: flex;
+        width: 40%;
+        }
+
+        .body{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .list-movies{
+            width: 90%;
+        }
+        .img{
+            width: 90%;
+        }
+}
+
+
